@@ -1,0 +1,70 @@
+# Learning HCL (HashiCorp Configuration Language) for Terraform
+
+/* 
+  This is a multi-line comment
+  This is a multi-line comment
+  This is a multi-line comment
+*/
+
+# Block: Container for other content
+block_type {
+  attributes1 = "value1"
+  attributes2 = "value2"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t2.micro"
+  count         = 3
+}
+
+
+# Attributes
+key = value
+
+# Data types
+"string"
+number
+boolean true false
+
+
+List
+list = ["value1", "value2", "value3"]
+security_groups = ["sg-12345678", "sg-87654321"]
+
+Maps
+variable "example_map" {
+    type = map
+    default = { key1 = "value1", key2 = "value2" }
+}
+
+locals {
+    my_map = { "name" = "John Doe", "age" = 30, "is_admin" = true }
+}
+
+locals.my_map["age"] # 30
+
+
+# Conditions
+resource "aws_instance" "example" {
+  instance_type = var.env == "development" ? "t2.micro" : "t2.small"
+}
+
+# Functions
+locals {
+    name = "John Doe"
+    fruits = ["apple", "banana", "cherry"]
+
+    message = "Hello, ${upper(local.name)}! I see you like ${join(", ", local.fruits)}."
+}
+
+# Resource Dependencies
+
+resource "aws_instance" "name" {
+    vpc_security_group_ids = aws_security_group.mysg.id
+}
+
+resource "aws_security_group" "mysg" {
+  #inbound rules
+}
+

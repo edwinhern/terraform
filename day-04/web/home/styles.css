@@ -1,0 +1,111 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #72edf2 10%, #5151e5 100%);
+  color: #333;
+  text-align: center;
+}
+
+header {
+  padding: 50px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3em;
+}
+
+header p {
+  margin: 0;
+  font-size: 1.2em;
+  color: #777;
+}
+
+section {
+  padding: 50px 20px;
+  margin: 20px 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  animation: slideIn 2s ease-in-out;
+}
+
+section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.review,
+.project {
+  margin: 20px 0;
+}
+
+.review p,
+.project p {
+  font-size: 1.2em;
+  color: #555;
+}
+
+.review span {
+  display: block;
+  margin-top: 10px;
+  color: #999;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form label {
+  margin-top: 10px;
+}
+
+form input,
+form textarea {
+  width: 80%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #5151e5;
+  color: white;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #333;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
